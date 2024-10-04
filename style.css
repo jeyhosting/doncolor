@@ -620,3 +620,8 @@ a {
     color: #f051cb;
     text-decoration: underline;
 }
+
+.text-primary {
+    --bs-text-opacity: 1;
+    color: rgb(251 134 253) !important;
+}
