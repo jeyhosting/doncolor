@@ -23,6 +23,32 @@
 		href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
 		rel="stylesheet">
 	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+	
+	<style>
+	/* Estilos para el banner de cookies */
+	#cookie-banner {
+	  position: fixed;
+	  bottom: 0;
+	  left: 0;
+	  width: 100%;
+	  background-color: #333;
+	  color: white;
+	  text-align: center;
+	  padding: 15px;
+	  font-size: 16px;
+	  display: none; /* Oculto hasta que se cargue */
+	  z-index: 1000;
+	}
+	#cookie-banner button {
+	  background-color: #007BFF;
+	  color: white;
+	  border: none;
+	  padding: 10px 20px;
+	  margin-left: 10px;
+	  cursor: pointer;
+	  font-size: 16px;
+	}
+	</style>		
 
 </head>
 
@@ -548,6 +574,27 @@ Recomiendo ir a tod@S, si quieren recibir un trato agradable y salir content@s ‚
 
 		</div>
 	</footer>
+	
+  <!-- Banner de Cookies -->
+  <div id="cookie-banner">
+    Usamos cookies para mejorar la experiencia en nuestra web. Al continuar, aceptas nuestro uso de cookies.
+    <button onclick="acceptCookies()">Aceptar</button>
+  </div>
+
+  <script>
+    // Mostrar el banner si no se ha aceptado anteriormente
+    window.onload = function() {
+      if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'block';
+      }
+    };
+
+    // Funci√≥n para aceptar cookies y ocultar el banner
+    function acceptCookies() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>		
 
 	<script src="js/jquery-1.11.0.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
